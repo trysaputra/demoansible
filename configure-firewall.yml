@@ -14,8 +14,8 @@
           service: http
           permanent: true
           state: enabled
-          notify:
-          - reload firewalld
+        notify:
+        - reload firewalld
 
         handlers:
         - name: reload firewalld
