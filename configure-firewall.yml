@@ -1,0 +1,22 @@
+---
+  - name: configure firewall
+    hosts: apps
+    gather_facts: false
+    become: true
+    tasks:
+      - name: Enable firewalld
+        service:
+          name: firewalld
+          state: started
+          enabled: yes
+      - name: setting up iptables
+        firewalld:
+          service: http
+          permanent: true
+          state: enabled
+          notify:
+          - reload firewalld
+
+        handlers:
+        - name: reload firewalld
+          service: name=httpd state=reloaded
