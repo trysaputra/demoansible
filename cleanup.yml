@@ -1,0 +1,13 @@
+---
+  - name: cleanup Apache
+    hosts: apps
+    become: true
+    tasks:
+      - name: uninstall Apache
+        yum:
+          name: httpd
+          state: absent
+      - name: cleanup directory
+        file:
+          path: /var/www/html
+          state: absent
