@@ -17,6 +17,6 @@
         notify:
         - reload firewalld
 
-        handlers:
-        - name: reload firewalld
-          service: name=httpd state=reloaded
+    handlers:
+      - name: reload firewalld
+        service: name=firewalld state=reloaded
