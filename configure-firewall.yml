@@ -9,10 +9,14 @@
           name: firewalld
           state: started
           enabled: yes
-      - name: setting up iptables
+      - name: setting up iptables permanent config
         firewalld:
           service: http
           permanent: true
+          state: enabled
+      - name: setting up iptables runtime config
+        firewalld:
+          service: http
           state: enabled
         notify:
         - reload firewalld
