@@ -1,9 +1,8 @@
 ---
----
-  - name: cleanup Apache
+  - name: create user
     hosts: apps
     become: true
-    tasks
+    tasks:
     - name: Create a login user with sudo
         user:
           name: {{user_input}}
