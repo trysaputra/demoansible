@@ -1,6 +1,6 @@
 ---
 - name: deploy apache
-  hosts: apps
+  hosts: 172.16.103.149
   gather_facts: false
   become: true
   tasks:
