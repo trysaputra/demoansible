@@ -1,6 +1,6 @@
 ---
   - name: cleanup Apache
-    hosts: 172.16.103.149
+    hosts: web
     become: true
     tasks:
       - name: uninstall Apache
